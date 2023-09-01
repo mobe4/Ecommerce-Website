@@ -9,17 +9,19 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "User")
+@Entity(name = "metadata")
 public class MetaData {
 
     @Id
      @GeneratedValue
-    private Long bid;
+    public Long id;
 
-    private String name;
-    private String uniqueId;
-    private String email;
+    public String name;
+    public String uniqueId;
+    public String email;
 
 
-
+    public String getEmail() {
+        return email;
+    }
 }

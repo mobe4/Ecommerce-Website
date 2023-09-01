@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.usermeteadata.Entity.MetaData;
 
 @RestController
-@RequestMapping("lora/v1/users/")
+@RequestMapping("lora/v1/customers/")
 public class UserController {
 
     @Autowired
@@ -18,7 +18,7 @@ public class UserController {
     public MetaData saveDetails (@RequestBody MetaData metaData){
 
         MetaData newUser = userService.saveUserMetaDataToDb(metaData);
-         return new MetaData();
+         return newUser;
     }
 
     @GetMapping("getUserDetails/{userid}")
